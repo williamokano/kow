@@ -16,4 +16,8 @@ class UserServiceImpl implements UserService
     {
         return $this->repository->getAll();
     }
+
+    public function getById($id) {
+        return $this->repository->getById($id);
+    }
 }

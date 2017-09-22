@@ -6,8 +6,18 @@ use Symfony\Component\HttpFoundation\Request;
 
 class HomeController
 {
-    public function index(Request $request, UserService $service)
+    /**
+     * @Inject
+     * @var UserService
+     */
+    private $userService;
+    public function index()
     {
-        return [$service->getAll(), $request->query->all()];
+        return $this->userService->getAll();
+    }
+
+    public function getById($id)
+    {
+        return $this->userService->getById($id);
     }
 }
