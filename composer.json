@@ -15,7 +15,8 @@
         "symfony/psr-http-message-bridge": "^1.0",
         "mindplay/middleman": "^2.0",
         "zendframework/zend-diactoros": "^1.6",
-        "nikic/fast-route": "^1.2"
+        "nikic/fast-route": "^1.2",
+        "doctrine/orm": "^2.5"
     },
     "autoload": {
         "psr-4": {

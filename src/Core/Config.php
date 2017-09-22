@@ -10,7 +10,7 @@ class Config
 
     public function __construct()
     {
-        $iterator = new DirectoryIterator(CONFIG_PATH);
+        $iterator = new DirectoryIterator(AUTO_CONFIG_PATH);
         foreach ($iterator as $fileInfo) {
             if ($fileInfo->isDot() || $fileInfo->isDir()) {
                 continue;
