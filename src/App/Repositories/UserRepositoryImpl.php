@@ -7,6 +7,6 @@ class UserRepositoryImpl implements UserRepository
 {
     public function getAll()
     {
-        return ['id' => 1, 'nome' => 'William'];
+        return [['id' => 1, 'nome' => 'William']];
     }
 }

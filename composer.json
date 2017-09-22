@@ -20,7 +20,12 @@
     "autoload": {
         "psr-4": {
             "Katapoka\\Kow\\": "src/",
-            "Psr\\": "psr/"
+            "unit\\": "tests/unit"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "behat/behat": "^3.4",
+        "mockery/mockery": "^0.9.9"
     }
 }
