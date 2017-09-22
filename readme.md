@@ -60,3 +60,54 @@ return [
 I'm using the PHP-DI framework to inject. Just configure the `config\di.php` and add the function/how to retrieve the instance of your dependency.  
 It has autowire annotation-based injection, just annontate your property with `@Inject`.  
 If injecting a concrete class instead of an interface, there's no need to configure the `config\di.php` to this dependency.  
+
+### Example
+```php
+<?php
+// UserService.php
+namespace Katapoka\Kow\App\Services\Contracts;
+
+interface UserService {
+    public function getAll();
+}
+```
+
+```php
+<?php
+// UserServiceImpl.php
+namespace Katapoka\Kow\App\Services;
+
+use Katapoka\Kow\App\Repositories\Contracts\UserRepository;
+use Katapoka\Kow\App\Services\Contracts\UserService;
+
+class UserServiceImpl implements UserService {
+    /**
+     * @Inject
+     * @var UserRepository
+     */
+    private $repository;
+
+    public function getAll() {
+        return $this->repository->getAll();
+    }
+}
+
+```
+
+```php
+<?php
+// HomeController.php
+namespace Katapoka\Kow\App\Controllers;
+
+use Katapoka\Kow\App\Services\Contracts\UserService;
+use Symfony\Component\HttpFoundation\Request;
+
+class HomeController
+{
+    public function index(Request $request, UserService $service)
+    {
+        return [$service->getAll(), $request->query->all()];
+    }
+}
+
+```
