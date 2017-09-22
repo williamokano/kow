@@ -118,3 +118,15 @@ class HomeController
 $router->get('/', [\Katapoka\Kow\App\Controllers\HomeController::class, 'index']);
 
 ```
+
+And finnaly:
+```php
+<?php
+use function DI\get;
+
+return [
+    \Katapoka\Kow\App\Services\Contracts\UserService::class => get(\Katapoka\Kow\App\Services\UserServiceImpl::class),
+    \Katapoka\Kow\App\Repositories\Contracts\UserRepository::class => get(\Katapoka\Kow\App\Repositories\UserRepositoryImpl::class),
+];
+
+```
