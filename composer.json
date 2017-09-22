@@ -1,0 +1,26 @@
+{
+    "name": "williamokano/middleware",
+    "description": "Test",
+    "authors": [
+        {
+            "name": "William Johnson dos Santos Okano",
+            "email": "williamokano@softbox.com.br"
+        }
+    ],
+    "require": {
+        "psr/http-message": "^1.0",
+        "php-di/php-di": "^5.4",
+        "symfony/http-foundation": "^3.3",
+        "doctrine/annotations": "^1.5",
+        "symfony/psr-http-message-bridge": "^1.0",
+        "mindplay/middleman": "^2.0",
+        "zendframework/zend-diactoros": "^1.6",
+        "nikic/fast-route": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Katapoka\\Kow\\": "src/",
+            "Psr\\": "psr/"
+        }
+    }
+}
