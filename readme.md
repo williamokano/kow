@@ -136,4 +136,4 @@ As this relies on PHP 7.1 (because of Doctrine and because yes) I created a `doc
 To get this application working, just run `docker-compose up`, assuming you have `docker-compose`.  
 
 ## Installing docker-compose
-(https://docs.docker.com/compose/install/)[https://docs.docker.com/compose/install/]
+[https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
