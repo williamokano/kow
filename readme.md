@@ -45,7 +45,7 @@ class ShowErrosMiddleware extends AbstractMiddleware
 }
 ```
 
-`di.php` file:
+`middlewares.php` file:
 
 ```php
 <?php
