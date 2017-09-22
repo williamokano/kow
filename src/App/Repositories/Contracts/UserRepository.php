@@ -1,6 +1,7 @@
 <?php
 namespace Katapoka\Kow\App\Repositories\Contracts;
 
-interface UserRepository {
+interface UserRepository
+{
     public function getAll();
 }

@@ -1,6 +1,7 @@
 <?php
 namespace Katapoka\Kow\App\Services\Contracts;
 
-interface UserService {
+interface UserService
+{
     public function getAll();
 }
