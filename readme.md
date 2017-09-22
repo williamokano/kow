@@ -111,3 +111,10 @@ class HomeController
 }
 
 ```
+
+```php
+<?php
+// src/Kernel/routes.php
+$router->get('/', [\Katapoka\Kow\App\Controllers\HomeController::class, 'index']);
+
+```
