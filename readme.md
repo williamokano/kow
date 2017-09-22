@@ -122,6 +122,7 @@ $router->get('/', [\Katapoka\Kow\App\Controllers\HomeController::class, 'index']
 And finnaly:
 ```php
 <?php
+// config/di.php
 use function DI\get;
 
 return [
