@@ -37,7 +37,7 @@ abstract class AbstractDbRepository implements Repository
     {
         return $this
             ->repository()
-            ->findBy([$field, $value]);
+            ->findBy([$field => $value]);
     }
 
     /**

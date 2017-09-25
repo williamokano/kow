@@ -20,4 +20,9 @@ class HomeController
     {
         return $this->userService->getById($id);
     }
+
+    public function findBy($field, $value)
+    {
+        return $this->userService->getBy($field, $value);
+    }
 }
