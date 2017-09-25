@@ -1,8 +1,7 @@
 <?php
 namespace Katapoka\Kow\App\Repositories\Contracts;
 
-interface UserRepository
+interface UserRepository extends Repository
 {
-    public function getAll();
-    public function getById($id);
+
 }
