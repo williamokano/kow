@@ -16,7 +16,19 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
+
   adminer:
     image: adminer
     ports:
       - 8080:8080
+
+  composer:
+    image: composer
+    volumes:
+      - ./:/app
+      - $SSH_AUTH_SOCK:/ssh-auth.sock
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SSH_AUTH_SOCK=/ssh-auth.sock
+    command: composer install

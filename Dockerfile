@@ -14,4 +14,5 @@ RUN docker-php-ext-install -j$(nproc) pdo \
     sockets \
     ftp \
     bcmath
+
 RUN a2enmod rewrite
