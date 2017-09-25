@@ -57,9 +57,9 @@ return [
 ```
 
 ## DI Injection
-I'm using the PHP-DI framework to inject. Just configure the `config\di.php` and add the function/how to retrieve the instance of your dependency.  
-It has autowire annotation-based injection, just annontate your property with `@Inject`.  
-If injecting a concrete class instead of an interface, there's no need to configure the `config\di.php` to this dependency.  
+I'm using the PHP-DI framework to inject. Just configure the `config\di.php` and add the function/how to retrieve the instance of your dependency.
+It has autowire annotation-based injection, just annontate your property with `@Inject`.
+If injecting a concrete class instead of an interface, there's no need to configure the `config\di.php` to this dependency.
 
 ### Example
 ```php
@@ -132,8 +132,8 @@ return [
 
 ```
 # Running
-As this relies on PHP 7.1 (because of Doctrine and because yes) I created a `docker-compose` file so you can wire it up all together without many more problems.  
-To get this application working, just run `docker-compose up`, assuming you have `docker-compose`.  
+As this relies on PHP 7.1 (because of Doctrine and because yes). I created a `docker-compose` file so you can wire it up all together without many more problems.
+To get this application working, just run `docker-compose up`, assuming you have `docker-compose`.
 
 ## Installing docker-compose
 [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
