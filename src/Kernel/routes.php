@@ -2,10 +2,10 @@
 
 use Katapoka\Kow\App\Controllers\HomeController;
 
-$router->get('/', [HomeController::class, 'index']);
-$router->get('/users', [HomeController::class, 'index']);
-$router->get('/users/{id:\d+}', [HomeController::class, 'getById']);
-$router->get('/users/{field}/{value}', [HomeController::class, 'findBy']);
-$router->get('/teste', function () {
+$this->router->get('/', [HomeController::class, 'index']);
+$this->router->get('/users', [HomeController::class, 'index']);
+$this->router->get('/users/{id:\d+}', [HomeController::class, 'getById']);
+$this->router->get('/users/{field}/{value}', [HomeController::class, 'findBy']);
+$this->router->get('/teste', function () {
     return ['hello' => 'world', 'to' => 'Okano'];
 });
