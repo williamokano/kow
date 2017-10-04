@@ -1,12 +1,12 @@
 <?php
+
 namespace Katapoka\Kow\Middlewares;
 
 use Interop\Http\Middleware\DelegateInterface;
 use Katapoka\Kow\Core\Exceptions\MethodNotAllowedException;
 use Katapoka\Kow\Core\Exceptions\RouteException;
 use Katapoka\Kow\Core\Exceptions\RouteNotFoundException;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class RouterMiddleware extends AbstractMiddleware
@@ -17,16 +17,7 @@ class RouterMiddleware extends AbstractMiddleware
      */
     private $router;
 
-    /**
-     * Process an incoming client or server request and return a response,
-     * optionally delegating to the next middleware component to create the response.
-     *
-     * @param RequestInterface $request
-     * @param DelegateInterface $delegate
-     *
-     * @return ResponseInterface
-     */
-    public function process(RequestInterface $request, DelegateInterface $delegate)
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
         $this->registerRoutes();
 
@@ -55,8 +46,8 @@ class RouterMiddleware extends AbstractMiddleware
         return $any;
     }
 
-    private function registerRoutes() {
-        $router = $this->router;
+    private function registerRoutes()
+    {
         include SRC_PATH . DIRECTORY_SEPARATOR . 'Kernel' . DIRECTORY_SEPARATOR . 'routes.php';
     }
 }

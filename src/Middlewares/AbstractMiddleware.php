@@ -2,13 +2,13 @@
 
 namespace Katapoka\Kow\Middlewares;
 
-use Interop\Http\Middleware\MiddlewareInterface;
+use Interop\Http\Middleware\ServerMiddlewareInterface;
 use Katapoka\Kow\Core\Application;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class AbstractMiddleware implements MiddlewareInterface
+abstract class AbstractMiddleware implements ServerMiddlewareInterface
 {
     /**
      * @Inject
