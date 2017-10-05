@@ -1,7 +1,10 @@
 <?php
+
 namespace Katapoka\Kow\Core;
 
 use DI\ContainerBuilder;
+use Exception;
+use Katapoka\Kow\App\Kernel\ExceptionHandler;
 use mindplay\middleman\ContainerResolver;
 use mindplay\middleman\Dispatcher;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
@@ -51,11 +54,15 @@ class Application
 
     public function run()
     {
-        $dispatcher = new Dispatcher($this->config->get('middlewares'), new ContainerResolver($this->container));
+        try {
+            $dispatcher = new Dispatcher($this->config->get('middlewares'), new ContainerResolver($this->container));
 
-        $psr7Response = $dispatcher->dispatch(self::request());
-        $httpFoundationFactory = new HttpFoundationFactory();
-        $symfonyResponse = $httpFoundationFactory->createResponse($psr7Response);
+            $psr7Response = $dispatcher->dispatch(self::request());
+            $httpFoundationFactory = new HttpFoundationFactory();
+            $symfonyResponse = $httpFoundationFactory->createResponse($psr7Response);
+        } catch (Exception $e) {
+            $symfonyResponse = ExceptionHandler::handler($e);
+        }
 
         $symfonyResponse->send();
     }
